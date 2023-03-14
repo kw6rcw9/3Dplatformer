@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpPower;
+    [SerializeField] ForceMode _forceMode;
     private bool _onGround = false;
 
     void Update()
@@ -27,7 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && _onGround == true)
         {
-            _rigidbody.AddForce(Vector3.up * _jumpPower, ForceMode.Impulse);
+            _rigidbody.AddForce(Vector3.up * _jumpPower, _forceMode);
            
         }
     }
