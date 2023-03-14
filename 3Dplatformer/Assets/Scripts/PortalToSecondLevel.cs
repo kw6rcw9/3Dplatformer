@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class PortalToSecondLevel : MonoBehaviour
 {
@@ -20,7 +21,23 @@ public class PortalToSecondLevel : MonoBehaviour
     }
     private void OnCollisionStay(Collision collision)
     {
-        Thread.Sleep(100);
-        _rigidbody.AddForce(Vector3.up * _power, ForceMode.Impulse );
+
+        //Invoke("JumpPortal", 0.5f);
+        JumpPortal();
+
+
+    }
+    void JumpPortal()
+    {
+        _rigidbody.AddForce(Vector3.up * _power, ForceMode.Impulse);
+    }
+    void NextLevel()
+    {
+        SceneManager.LoadScene("Second_level");
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+
+        Invoke("NextLevel", 2);
     }
 }
