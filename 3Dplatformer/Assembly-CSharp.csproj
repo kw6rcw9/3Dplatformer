@@ -59,9 +59,10 @@
     <Compile Include="Assets\Scripts\MovingPlats.cs" />
     <Compile Include="Assets\Scripts\ButtonChangeColor.cs" />
     <Compile Include="Assets\Scripts\PortalToSecondLevel.cs" />
+    <Compile Include="Assets\Scripts\Moving.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PickUpBalls.cs" />
-    <Compile Include="Assets\Scripts\Moving.cs" />
+    <Compile Include="Assets\Scripts\ResetLevel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

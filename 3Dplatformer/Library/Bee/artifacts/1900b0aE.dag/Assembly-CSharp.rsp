@@ -362,6 +362,7 @@
 "Assets/Scripts/PickUpBalls.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/PortalToSecondLevel.cs"
+"Assets/Scripts/ResetLevel.cs"
 -langversion:9.0
 
 /deterministic

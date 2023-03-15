@@ -10,10 +10,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] ForceMode _forceMode;
     private bool _onGround = false;
 
+    [SerializeField] private Animator _animator;
+
     void Update()
     {
-        PlayJump();
+        //PlayJump();
         PlayerMove();
+        AnimationJump();
     }
     private void OnCollisionStay(Collision collision)
     {
@@ -24,15 +27,25 @@ public class PlayerController : MonoBehaviour
     {
         _onGround=false;
     }
-    private void PlayJump()
+    //private void PlayJump()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space) && _onGround == true)
+    //    {
+    //        _rigidbody.AddForce(Vector3.up * _jumpPower, _forceMode);
+
+    //    }
+    //}
+
+    private void AnimationJump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && _onGround == true)
         {
-            _rigidbody.AddForce(Vector3.up * _jumpPower, _forceMode);
-           
+            _animator.SetTrigger("Jump");
+
         }
+
+
     }
-    
 
     private void PlayerMove()
     {
