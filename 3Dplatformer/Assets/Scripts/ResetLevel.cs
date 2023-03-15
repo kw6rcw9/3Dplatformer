@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ResetLevel : MonoBehaviour
 {
     [SerializeField] GameObject _player;
+
     
 
 
@@ -25,6 +26,7 @@ public class ResetLevel : MonoBehaviour
         if(_player.transform.position.y < transform.position.y)
         {
             SceneManager.LoadScene("Second_level");
+            
 
         }
     }
