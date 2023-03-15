@@ -9,7 +9,8 @@ public class MovingPlatf : MonoBehaviour
     [SerializeField] float Freq = 2;
     [SerializeField] float Offset = 0;
     [SerializeField] Vector3 StartPos;
-    [SerializeField] float Delay;
+
+    [SerializeField] float Side = 1;
     void Start()
     {
         StartPos = transform.position;
@@ -18,7 +19,7 @@ public class MovingPlatf : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Invoke("Move", Delay);
+        Move();
     }
 
      void Move()
@@ -26,6 +27,6 @@ public class MovingPlatf : MonoBehaviour
         t = t + Time.deltaTime;
         Offset = Amp * Mathf.Sin(t * Freq);
 
-        transform.position = StartPos + new Vector3(0, 0, Offset);
+        transform.position = StartPos + new Vector3(0, 0, Offset * Side);
     }
 }
